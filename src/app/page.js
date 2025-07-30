@@ -38,13 +38,13 @@ export default function Home() {
         className="border border-black p-2 text-black"
         style={{color: 'grey'}}
       />
-      <div className="p-4 border-l">
+      <div className="p-4">
         <h3 className="mb-2 font-bold">Suggestions:</h3>
         <div className="flex flex-wrap gap-2">
           {suggestions.map((suggestion, index) => (
             <button
               key={index}
-              className="px-3 py-1 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700 font-medium border border-gray-200 shadow-sm active:bg-gray-300 active:transform active:scale-95"
+              className="px-3 py-1 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors text-gray-700 font-medium shadow-sm active:bg-gray-300 active:transform active:scale-95"
               onClick={() => {
                 setWords([...words, suggestion]);
               }}
@@ -56,11 +56,11 @@ export default function Home() {
       </div>
       <div className="">
         {words.map((word, index) => (
-          <div key={index} className="py-1 flex justify-between">
+          <div key={index} className="py-1 flex justify-between hover:bg-gray-100 hover:rounded px-2 transition-colors duration-200 cursor-pointer">
             <span>{word}</span>
             <button 
               onClick={() => handleDelete(index)}
-              className="text-red-500 ml-2"
+              className="text-red-500 ml-2 hover:text-red-700 transition-colors"
             >
               ×
             </button>
